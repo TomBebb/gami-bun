@@ -1,0 +1,32 @@
+{
+  "name": "gami",
+  "type": "module",
+  "author": {
+    "email": "tombebb@protonmail.com",
+    "name": "Tom Bebbington",
+    "url": "https://github.com/TomBebb"
+  },
+  "scripts": {
+    "dev:server": "bun src/main.ts",
+    "dev:frontend": "cd src/frontend && vite",
+    "dev": "concurrently bun:dev:*",
+    "build:frontend": "cd src/frontend && vite build",
+    
+    "deploy:linux": "concurrently bun:deploy:linux-*",
+    "deploy:linux-x64": "bun build --minify --compile --target=bun-linux-x64 ./src/main.ts --outfile publish/gami-linux-x64",
+    "deploy:linux-arm64": "bun build --minify --compile --target=bun-linux-arm64 ./src/main.ts --outfile publish/gami-linux-arm64",
+    "deploy:windows-x64": "bun build --minify --compile --target=bun-windows-x64 ./src/main.ts --outfile publish/gami-windows-x64.exe"
+  },
+  "dependencies": {
+    "webview-bun": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.1.13",
+    "@ui5/webcomponents": "^2.4.0",
+    "@ui5/webcomponents-base": "^2.4.0",
+    "concurrently": "^9.1.0",
+    "lit": "^3.2.1",
+    "prettier": "^3.3.3",
+    "vite": "^5.4.10"
+  }
+}
