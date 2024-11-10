@@ -1,13 +1,16 @@
 {
-  "name": "gami",
+  "name": "@gami/common",
   "type": "module",
-  "workspaces": ["packages/*", "apps/*"],
   "author": {
     "email": "tombebb@protonmail.com",
     "name": "Tom Bebbington",
     "url": "https://github.com/TomBebb"
   },
+  "scripts": {
+    "build": "bun build.ts"
+  },
   "devDependencies": {
-    "prettier": "^3.3.3"
+    "@types/bun": "^1.1.13",
+    "bun-plugin-dts": "^0.3.0"
   }
 }

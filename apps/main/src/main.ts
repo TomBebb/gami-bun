@@ -1,6 +1,6 @@
 import { Webview } from "webview-bun";
 import * as fs from "node:fs/promises";
 const webview = new Webview();
-const html = await fs.readFile("frontend/dist/index.html", "utf-8");
+import html from "./../../frontend/dist/index.html" with { type: "text" };
 webview.setHTML(html);
 webview.run();
