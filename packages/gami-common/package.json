@@ -1,16 +1,21 @@
 {
   "name": "@gami/common",
   "type": "module",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/*"
+  ],
   "author": {
     "email": "tombebb@protonmail.com",
     "name": "Tom Bebbington",
     "url": "https://github.com/TomBebb"
   },
   "scripts": {
-    "build": "bun build.ts"
+    "build": "tsup"
   },
   "devDependencies": {
     "@types/bun": "^1.1.13",
-    "bun-plugin-dts": "^0.3.0"
+    "tsup": "^8.3.5"
   }
 }
