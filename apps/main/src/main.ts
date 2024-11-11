@@ -1,6 +1,10 @@
-import { Webview } from "webview-bun";
-import * as fs from "node:fs/promises";
-const webview = new Webview();
-import html from "./../../frontend/dist/index.html" with { type: "text" };
-webview.setHTML(html);
-webview.run();
+const worker = new Worker(import.meta.dirname + "/worker.ts");
+
+const server = Bun.serve({
+  port: 8080,
+  fetch(request: Request) {
+    console.info("request", request);
+    return Response.json({ demo: "world" });
+  },
+});
+worker.addEventListener("close", () => server.stop(true));

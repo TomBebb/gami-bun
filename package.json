@@ -2,6 +2,7 @@
   "name": "gami",
   "type": "module",
   "workspaces": ["packages/*", "apps/*"],
+  "private": true,
   "author": {
     "email": "tombebb@protonmail.com",
     "name": "Tom Bebbington",
