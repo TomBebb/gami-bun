@@ -12,15 +12,15 @@ useConfirmDetector(() => {
 </script>
 
 <template>
-  <a
-    href="/"
+  <RouterLink
+    :to="item.path"
     ref="link"
     class="flex items-center gap-2"
     :class="{ focus: selected }"
   >
     <Icon class="" :icon="item.icon" inline />
     <div class="flex-1">{{ item.name }}</div>
-  </a>
+  </RouterLink>
 </template>
 
 <style scoped></style>
