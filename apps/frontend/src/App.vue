@@ -2,5 +2,16 @@
 import Drawer from "./Menu.vue";
 </script>
 <template>
-  <Drawer></Drawer>
+  <Drawer
+    :items="[
+      {
+        icon: 'mdi:library',
+        name: 'Games',
+      },
+      {
+        icon: 'mdi:cog',
+        name: 'Settings',
+      },
+    ]"
+  />
 </template>
