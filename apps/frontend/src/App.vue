@@ -11,8 +11,9 @@ import Drawer from "./Menu.vue";
       {
         icon: 'mdi:cog',
         name: 'Settings',
-        children: [{ name: 'Appearance', icon: 'mdi:cog' }],
+        children: [],
       },
+      { name: 'Appearance', icon: 'mdi:cog' },
     ]"
   />
 </template>

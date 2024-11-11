@@ -1,22 +1,19 @@
 <script setup lang="ts">
-import { Icon } from "@iconify/vue";
 import { MenuItemData } from "./models";
-defineProps<{ item: MenuItemData }>();
+import MenuItemInner from "./MenuItemInner.vue";
+defineProps<{ item: MenuItemData; selected: boolean }>();
 </script>
 
 <template>
   <li>
     <details open v-if="item.children?.length">
       <summary>
-        <menu-item :item="{ ...item, children: undefined }" />
+        <MenuItemInner :item="item" :selected />
       </summary>
       <ul>
-        <MenuItem v-for="child in item.children" :item="child" />
+        <MenuItem v-for="child in item.children" :item="child" :selected />
       </ul>
     </details>
-    <a v-else href="/" class="flex items-center gap-2">
-      <Icon class="" :icon="item.icon" inline />
-      <div class="flex-1">{{ item.name }}</div>
-    </a>
+    <MenuItemInner v-else :item="item" :selected />
   </li>
 </template>
