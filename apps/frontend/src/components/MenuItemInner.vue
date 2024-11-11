@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
-import { MenuItemData } from "./models";
-import { useConfirmDetector } from "./input";
+import { MenuItemData } from "../models";
+import { useConfirmDetector } from "../input";
 import { ref } from "vue";
 defineProps<{ item: MenuItemData; selected: boolean }>();
 const link = ref<HTMLAnchorElement>();

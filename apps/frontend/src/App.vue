@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Drawer from "./Menu.vue";
+import Drawer from "./components/Menu.vue";
 </script>
 <template>
   <Drawer
@@ -16,4 +16,5 @@ import Drawer from "./Menu.vue";
       { name: 'Appearance', icon: 'mdi:cog' },
     ]"
   />
+  <RouterView />
 </template>

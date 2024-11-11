@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { MenuItemData } from "./models";
+import { MenuItemData } from "../models";
 import MenuItem from "./MenuItem.vue";
 import { ref } from "vue";
-import { useDownDetector, useUpDetector } from "./input";
+import { useDownDetector, useUpDetector } from "../input";
 const props = defineProps<{
   items: MenuItemData[];
   children?: MenuItemData[];
