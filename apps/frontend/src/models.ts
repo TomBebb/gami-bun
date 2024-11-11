@@ -2,4 +2,6 @@ export interface IconAndName {
   name: string;
   icon: string;
 }
-export interface MenuItem extends IconAndName {}
+export interface MenuItemData extends IconAndName {
+  children?: MenuItemData[];
+}
